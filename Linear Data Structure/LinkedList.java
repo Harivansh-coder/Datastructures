@@ -1,3 +1,4 @@
+//Main linkedlist class
 public class LinkedList {
    
     Node head; 
@@ -16,6 +17,7 @@ public class LinkedList {
 
 }
 
+//insert function implemented 
 public static LinkedList insert(LinkedList list, int data){
     
     Node new_node = new Node(data);
@@ -76,3 +78,11 @@ public static void main(String[] args){
 
     }
 }
+
+
+/*
+Output:
+
+LinkedList: 14 52 6 21 2 53 7 8 
+
+*/
