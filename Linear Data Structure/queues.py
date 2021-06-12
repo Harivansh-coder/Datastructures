@@ -55,7 +55,7 @@ print(q.length())
 print(q.dequeue())
 
 print(q.dequeue())
-print(q.dequeue())
+print(q.dequeue())  #final queue[9,4]
 
 
 
@@ -64,6 +64,15 @@ print(q.dequeue())
 """
 output:
 
-
+2
+5
+False
+3
+True
+7
+3
+7
+9
+4
 
 """
