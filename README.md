@@ -1,2 +1,2 @@
-# Datastructures
-Implementation of all Data structures
+# Data Structures
+Implementation of all popular data structures
