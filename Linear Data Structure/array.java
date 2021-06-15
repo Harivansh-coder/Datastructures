@@ -16,11 +16,12 @@ class array{
     //Insert function
     public void insert(int val){
         if (len == size){
-            var temp = new int[2*size];
+            int[] temp = new int[2*size];
             for (int i = 0; i < len-1;i++){
                 temp[i] = arr[i];
             }
             arr = temp;
+            size *= 2;
         }
         arr[len] = val;
         len++;
@@ -65,7 +66,7 @@ class array{
     }
 
     public static void main(String[] args) {
-        var arr = new array();
+        array arr = new array();
 
         arr.insert(10);
         arr.insert(20);
