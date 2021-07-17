@@ -1,3 +1,6 @@
+"""
+Linked List implemented in Python3 with insert, print methods.
+"""
 class Node:
     def __init__(self,data) -> None:
         self.val = data
