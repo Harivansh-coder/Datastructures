@@ -45,7 +45,7 @@ class LinkedList:
         pre.next = node
         node.next = post
 
-
+    # LinkedList reversing function implemented
     def reverse(self):
         prev = None
         current = self.head
