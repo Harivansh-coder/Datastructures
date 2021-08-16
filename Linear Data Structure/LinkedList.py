@@ -1,71 +1,91 @@
 """
-Linked List implemented in Python3 with insert, print methods.
+A simple implementation of Linear datastructure Linkedlist.
+
 """
+
 class Node:
-    def __init__(self,data) -> None:
-        self.val = data
+
+    def __init__(self, value) -> None:
+        self.val = value
         self.next = None
 
-    
-class LinkedList:
-    def __init__(self) -> None:
-        self.head = None
 
-    # Tranverse through the Linked List and print values
+class LinkedList:
+
+    def __init__(self) -> None:
+        
+        self.head = None
+        self.tail = None
+
     def printll(self):
-    
+
         temp = self.head
-        while temp:
-            print(temp.val,end = " ")
+
+        while temp != None:
+            print(temp.val, end = " ")
+
             temp = temp.next
 
-    # insert the element at the start of the list
-    def push(self,val):
-        temp = Node(val)
-        temp.next = self.head
-        self.head = temp 
+        print()
 
-
-    def insert(self,val,preNode):
+    def push(self, val, flag):
         temp = Node(val)
 
-        temp.next = preNode.next
-        preNode.next = temp
+        if flag == 0:
+            temp.next = self.head
+            self.head = temp
+        else:
+            self.tail.next = temp
+            self.tail = temp
+             
+
+    def insert(self,pre ,post, node):
+
+        pre.next = node
+        node.next = post
 
 
-            
+        
 
-if __name__== '__main__':
-    
+if __name__ == "__main__":
+
+    node1 = Node(1)
+    node2 = Node(2)
+    node3 = Node(3)
+
+    node4 = Node(4)
+    node5 = Node(5)
+
+    node1.next = node2
+    node2.next = node3
+    node3.next = node4
+    node4.next = node5
+
+    node6 = Node(10)
+
+    node7 = Node(15)
+
     ll = LinkedList()
 
-    ll.head = Node(1)
-    second = Node(2)
-    third = Node(3)
-
-    ll.head.next = second
-    second.next = third
-
-    ll.push(5)
-
-    ll.push(10)
-
-    ll.push(11)
-
-    ll.push(15)
-
-    ll.insert(12,third)
-
-    ll.push(0)
-
-    ll.push(12)
+    ll.head = node1
+    ll.tail = node5
 
     ll.printll()
-    
-    
-"""
-#   OUTPUT
 
-    12 0 15 11 10 5 1 2 3 12 
+    ll.push(0,0)
+    ll.push(6,1)
+
+    ll.insert(node2, node3, node6)
+    ll.insert(node2, node6, node7)
+
+
+    ll.printll()
+
+
+"""
+# Output
+
+    1 2 3 4 5 
+    0 1 2 15 10 3 4 5 6 
     
 """
